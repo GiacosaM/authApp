@@ -1,6 +1,7 @@
 <div class="title">
     <h1 > {{ operacion}} Persona</h1>
   </div>
+
   <div class="container">
     <app-spinner *ngIf="loading"></app-spinner>
     <mat-card class="card">
@@ -41,10 +42,6 @@
                     <button type="submit" [disabled]="form.invalid"class="btnAceptar" mat-raised-button color="primary">Aceptar</button>
                     <button routerLink="/dashboard" mat-raised-button>Volver</button>
                 </mat-grid-tile>
-  
-              
-  
-  
             </mat-grid-list>
             
             <span class="alerta" *ngIf="campoEsValido('nombre')">

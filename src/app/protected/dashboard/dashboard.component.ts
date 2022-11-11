@@ -1,13 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/services/auth.service';
-
 import { MatPaginator } from '@angular/material/paginator';
-
 import { MatTableDataSource } from '@angular/material/table';
-
 import { AfterViewInit, OnInit, ViewChild } from '@angular/core';
-
 import { Persona } from 'src/app/auth/interfaces/persona';
 import { MatSort } from '@angular/material/sort';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -29,18 +25,18 @@ export class DashboardComponent implements OnInit, AfterViewInit  {
   @ViewChild(MatSort) sort!: MatSort;
   
 
-  constructor(private _snackBar: MatSnackBar, private _personaService: PersonaService) { }
+  constructor(private _snackBar: MatSnackBar, 
+    private _personaService: PersonaService,
+    private _authService: AuthService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.obtenerPersonas();
   }
-
-  
-  
-  
     ngAfterViewInit(){
       this.dataSource.paginator = this.paginator;
-      this.paginator._intl.itemsPerPageLabel = 'Cant. por Pagina'
+      this.paginator._intl.itemsPerPageLabel = 'Cant. por Pagina';
       this.dataSource.sort = this.sort;
     }
   
@@ -78,6 +74,11 @@ export class DashboardComponent implements OnInit, AfterViewInit  {
           this.loading = false;
           this.obtenerPersonas();
       });      
+    }
+
+    logOut() {
+      this.router.navigateByUrl('/auth');
+      this._authService.logout();
     }
     
     

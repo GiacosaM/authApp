@@ -21,6 +21,10 @@ table {
     cursor: pointer;
     color: #bc4317;
 }
+.logout {
+  cursor: pointer;
+  color: whitesmoke;
+}
 .search {
     cursor: pointer;
 }
@@ -32,4 +36,8 @@ table {
 .agregar {
   font-size: 10px;
   line-height: 28px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
 }
