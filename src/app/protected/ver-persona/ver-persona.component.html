@@ -1,0 +1,23 @@
+<div class="title">
+    <h1 > Detalle Persona</h1>
+  </div>
+<app-spinner *ngIf="loading == true"></app-spinner>
+
+<div *ngIf="personas != null" class="container">
+    <mat-card class="card"> 
+    <mat-card-title> Detalles de la Persona - Id Nro. {{personas.id}} </mat-card-title>
+    <mat-card-content>
+        
+        <p> <strong>Nombre</strong> {{personas.name}}</p>
+        <p> <strong>Apellido</strong> {{personas.lastname}}</p>
+        <p> <strong>Email</strong> {{personas.email}}</p>
+        <p> <strong>Telefono</strong> {{personas.telefono}}</p>
+
+
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button routerLink="/dashboard" mat-raised-button>Volver</button>
+    </mat-card-actions>
+    </mat-card>
+</div>

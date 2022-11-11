@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+  }
+ 
+  td, th { 
+    width: 15% ;
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .devuelto {
+    cursor: pointer;
+    color: #147d14;
+    
+}
+
+.delete {
+    cursor: pointer;
+    color: #bc4317;
+}
+.search {
+    cursor: pointer;
+}
+.edit {
+  cursor: pointer;
+  color: #1878B0;
+
+}
+.agregar {
+  font-size: 10px;
+  line-height: 28px;
+}

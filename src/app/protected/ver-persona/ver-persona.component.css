@@ -1,0 +1,10 @@
+.title {
+    padding: 30px;
+    background-color: #666;
+    text-align: center;
+    color: white;
+  }
+.card {
+  margin-top: 5px ;
+  text-align: center;
+}

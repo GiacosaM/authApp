@@ -1,0 +1,37 @@
+.card {
+    margin-top: 10px;
+}
+
+.mat-form-field {
+    width: 100%;
+    margin: 5px;
+}
+
+.contenedor  {
+    width: 100%;
+    margin: 5px;
+    display: block;
+}
+
+.btnAceptar {
+    margin-right: 15px;
+    
+}
+
+.alerta {
+    display: grid;
+    place-items: center;
+    margin: 0.5rem;
+    
+    border-radius: 0.30rem;
+    border-top-left-radius: 0.25rem;
+    padding: 0.45rem;
+    
+    border:none;
+    background-color: rgb(221, 170, 170);
+    border-color: red;
+    color: black;
+}
+.center {
+    display: flex;
+}

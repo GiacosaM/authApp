@@ -1,0 +1,64 @@
+<div class="title">
+    <h1 > {{ operacion}} Persona</h1>
+  </div>
+  <div class="container">
+    <app-spinner *ngIf="loading"></app-spinner>
+    <mat-card class="card">
+        <mat-card-subtitle> Datos de la Persona</mat-card-subtitle>
+        <form [formGroup]="form" (ngSubmit)="agregarEditarPersona()" autocomplete="off">
+            <mat-grid-list cols="2" rowHeight="80px">
+  
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nombre</mat-label>
+                        <input type="text" formControlName="nombre" autocomplete="off" matInput>
+                    </mat-form-field>
+                </mat-grid-tile>
+                
+                <mat-grid-tile>
+                  <mat-form-field appearance="outline">
+                      <mat-label>Apellido</mat-label>
+                      <input type="text" formControlName="apellido" autocomplete="off" matInput>
+                  </mat-form-field>
+              </mat-grid-tile>
+  
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>E-mail</mat-label>
+                        <input formControlName="mail" autocomplete="off" matInput>
+                    </mat-form-field>
+                </mat-grid-tile>
+  
+                <mat-grid-tile>
+                  <mat-form-field appearance="outline">
+                      <mat-label>Telefono</mat-label>
+                      <input type="text" formControlName="telefono" autocomplete="off" matInput>
+                  </mat-form-field>
+              </mat-grid-tile>
+  
+              
+                <mat-grid-tile [colspan] ="2">
+                    <button type="submit" [disabled]="form.invalid"class="btnAceptar" mat-raised-button color="primary">Aceptar</button>
+                    <button routerLink="/dashboard" mat-raised-button>Volver</button>
+                </mat-grid-tile>
+  
+              
+  
+  
+            </mat-grid-list>
+            
+            <span class="alerta" *ngIf="campoEsValido('nombre')">
+                Debe ingresar un Nombre que contenga como minimo 4 y un maximo de 15 letras
+            </span>
+            <span class="alerta" *ngIf="campoEsValido('apellido')">
+              Debe ingresar un Apellido que contenga como minimo 4 y un maximo de 15 letras
+            </span>
+            <span class="alerta" *ngIf="campoEsValido('mail')">
+              Debe ingresar un e-mail con Formato Valido (Ej. xxxx@gmail.com)
+            </span>
+            <span class="alerta" *ngIf="campoEsValido('telefono')">
+              Debe ingresar un telefono Valido, que contenga entre 10 y 12 numeros
+          </span>
+        </form>
+    </mat-card>
+  </div>
